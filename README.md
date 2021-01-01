@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simple data quality checker on large scale dataset that goal for correcting the misspelling from the labeled data and cleaning out the outliers. The []() is the dataset being applied in here.
+This is a simple data quality checker on large scale dataset that goal for correcting the misspelling from the labeled data and cleaning out the outliers. The [Office of Payroll Administration]() is the dataset being applied in here.
 
 ### Dataset
 
@@ -46,3 +46,5 @@ By doing so, you can use the `hfs` to manipulate the file in Hadoop. Below are t
 If you want to enter in the spark environment, type `pyspark2` or `pyspark` (some of the MLlib package cannot be implemented in `pyspark`, so enter `pyspark2` instead)
 
 Note that all these command and tutorial are all from the class **Big Data** taught by **Prof. Juliana Freire**.
+
+### Run Program
