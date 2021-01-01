@@ -18,34 +18,31 @@ The code is implemented under NYU Dumbo. Before running the program on Dumbo, ma
 
 * Create a `.bashrc` file with the following code:
 
-    HADOOP_EXE='/usr/bin/hadoop'
-    HADOOP_LIBPATH='/opt/cloudera/parcels/CDH/lib'
-    HADOOP_STREAMING='hadoop-mapreduce/hadoop-streaming.jar'
-
-    alias hfs="$HADOOP_EXE fs"
-    alias hjs="$HADOOP_EXE jar $HADOOP_LIBPATH/$HADOOP_STREAMING"
-    export PYSPARK_PYTHON='/share/apps/python/3.6.5/bin/python'
-    export PYSPARK_DRIVER_PYTHON='/share/apps/python/3.6.5/bin/python'
+>HADOOP_EXE='/usr/bin/hadoop'
+>HADOOP_LIBPATH='/opt/cloudera/parcels/CDH/lib'
+>HADOOP_STREAMING='hadoop-mapreduce/hadoop-streaming.jar'
+>
+>alias hfs="$HADOOP_EXE fs"
+>alias hjs="$HADOOP_EXE jar $HADOOP_LIBPATH/$HADOOP_STREAMING"
+>export PYSPARK_PYTHON='/share/apps/python/3.6.5/bin/python'
+>export PYSPARK_DRIVER_PYTHON='/share/apps/python/3.6.5/bin/python'
 
 * Conduct bashrc:
 
-	source .bashrc
+>source .bashrc
 
-By doing so, `hfs` will be the abbreviation to check the file in Hadoop. Below are the few commands that most frequent used in Hadoop:
- 
+By doing so, you can use the `hfs` to manipulate the file in Hadoop. Below are the few commands that most frequent used in Hadoop:
+	
+	hfs -ls
+	hfs -rm -r <filename>
+	hfs -get <filename>
+	hfs -getmerge <filename> <filename>
 
-* CentOS 7.7 for production environment
+* Conduct bashrc:
 
-Clone the repository:
+>module load python/gnu/3.6.5
+>module load spark/2.4.0
 
-    git clone https://github.com/GreatStephen/DSP-Lab.git
+If you want to enter in the spark environment, type `pyspark2` or `pyspark` (some of the MLlib package cannot be implemented in `pyspark`, so enter `pyspark2` instead)
 
-Install the dependecies from `requirements.txt`:
-
-    pip install -r requirements.txt
-
-Run the program:
-
-    python effect.py
-
-If you have questions, feel free to leave a message [here](https://github.com/GreatStephen/DSP-Lab/issues).
+Note that all these command and tutorial are all from the class **Big Data** taught by **Prof. Juliana Freire**.
