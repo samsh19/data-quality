@@ -55,10 +55,10 @@ Misspelling for labeled data:
 
 	python run.py -f misspelling -i <inputDataset> -mis_o <correctOutput> -mis_col <targetColumn> -mis_lev_dist <number>
 
->`inputDataset`: the input file name is "Citywide_Payroll_Data__Fiscal_Year_.csv"
->`correctOutput`: the output file name for the misspelling output
->`targetColumn`: the target column for misspelling checker, such as "Agency Name"
->`number`: the filter number for Levenshtein distance, which can be set as 2
+>`inputDataset`: the input file name is "Citywide_Payroll_Data__Fiscal_Year_.csv"<br>
+>`correctOutput`: the output file name for the misspelling output<br>
+>`targetColumn`: the target column for misspelling checker, such as "Agency Name"<br>
+>`number`: the filter number for Levenshtein distance, which can be set as 2<br>
 
 Outliers:
 
@@ -66,19 +66,19 @@ For optimal K in K-means:
 	
 	python run.py -f outliers -i <inputDataset> -out_f "optimal K" -out_K <outputKchecker> -out_rate <sampleRate> -out_size <checkSize> -out_ktop <topNumCluster>
 
->`inputDataset`: the input file name is "Citywide_Payroll_Data__Fiscal_Year_.csv"
->`outputKchecker`: the output file name for the result of the elbow cost and silhouette_list methods
->`sampleRate`: the sample rate of the original dataset
->`checkSize`: the times for run the K-means checker
->`topNumCluster`: the maximum number of the cluster to run the K-means checker
+>`inputDataset`: the input file name is "Citywide_Payroll_Data__Fiscal_Year_.csv"<br>
+>`outputKchecker`: the output file name for the result of the elbow cost and silhouette_list methods<br>
+>`sampleRate`: the sample rate of the original dataset<br>
+>`checkSize`: the times for run the K-means checker<br>
+>`topNumCluster`: the maximum number of the cluster to run the K-means checker<br>
 
 For outliers search:
 	
 	python run.py -f outliers -i <inputDataset> -out_f "find outliers" --out_opt_k <optimalK> -out_c <clusterCenter> -out_o <outliersOutput>
 
->`inputDataset`: the input file name is "Citywide_Payroll_Data__Fiscal_Year_.csv"
->`optimalK`: the optimal number for K-means, which can be set as 4
->`clusterCenter`: the file name for the output cluster center list
->`outliersOutput`: the file name for the outliers output
+>`inputDataset`: the input file name is "Citywide_Payroll_Data__Fiscal_Year_.csv"<br>
+>`optimalK`: the optimal number for K-means, which can be set as 4<br>
+>`clusterCenter`: the file name for the output cluster center list<br>
+>`outliersOutput`: the file name for the outliers output<br>
 
 If you have questions, feel free to leave a message [here](https://github.com/samsh19/data-quality/issues).
