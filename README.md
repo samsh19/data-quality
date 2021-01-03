@@ -26,6 +26,10 @@ For outliers, this repository first sampling different data from the original da
 
 ## Local Deployment
 
+Clone the repository:
+
+    git clone https://github.com/samsh19/data-quality.git
+
 ### Environment
 The code is implemented under `NYU Dumbo`. Before running the program, make sure to conduct `.bashrc` with the following command:
 
