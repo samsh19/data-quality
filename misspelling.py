@@ -111,7 +111,7 @@ if __name__ == '__main__':
     df = df.select("*").withColumn("id", monotonically_increasing_id())
 
     # note: remove the original file before save these file
-    df_distribution, df_correctness = missepelling(df, colname, levenshtein_distance=2)
+    df_distribution, df_correctness = missepelling(df, target_colname, levenshtein_distance=2)
     df_distribution.orderBy(colname).coalesce(1).write.format("csv").option("header", "True").mode("append").save(df_distribution_filename)
     df_correctness.coalesce(1).write.format("csv").option("header", "True").mode("append").save(df_correctness_filename)
     """

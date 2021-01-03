@@ -179,17 +179,19 @@ if __name__ == '__main__':
 
     df = spark.read.format("csv").options(header="true", inferschema="true").load(file_name)
     df.createOrReplaceTempView("df")
-    for colname in df.columns: df = df.withColumnRenamed(colname, "_".join(colname.split(" "))) # handle the column name with space
+    for colname in df.columns:
+        df = df.withColumnRenamed(colname, "_".join(colname.split(" "))) # handle the column name with space
     # add index to the table
     df = df.select("*").withColumn("id", monotonically_increasing_id())
+    
     # normalize data
+    column_name_list = [i[0] for i in df.dtypes if i[1]=="double"]
     df = df_normalization(df, column_name_list, float_decimal=5)
     # get feature column
-    scaled_column = [col for col in df_vec.columns if "scaled" in col]
+    scaled_column = [col for col in df.columns if "scaled" in col]
     df = get_feature(df, scaled_column)
     df = df.select("id", "feature")
     
-    column_name_list = [i[0] for i in df.dtypes if i[1]=="double"]
     # pick k for clustering
     df_pick_k = pick_k(df, column_name_list, sample_rate=0.0005, sample_size=5, ktop=10)
     # note: remove the original file before save these file
